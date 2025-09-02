@@ -1,5 +1,17 @@
+<center>
 
-# OpenApi IT Rust Client 
+
+# openapi® client for Rust 
+
+The perfect starting point to integrate [openapi®](https://openapi.com/) within your Rust project
+
+
+</center>
+
+
+
+
+[![GitHub license](https://img.shields.io/github/license/openapi/openapi-cli-rust)](
 
 This client is used to interact with the API found at [openapi.it](https://openapi.it/)
 
