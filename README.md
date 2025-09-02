@@ -1,6 +1,6 @@
 <div align="center">
 <h1>openapi® client for Rust</h1>
-<h4>The perfect starting point to integrate [openapi®](https://openapi.com/) within your Rust project</h4>
+<h4>The perfect starting point to integrate <a href="https://openapi.com/">openapi®</a> within your Rust project</h4>
 </div>
 
 This client is used to interact with the API found at [openapi.it](https://openapi.it/)
