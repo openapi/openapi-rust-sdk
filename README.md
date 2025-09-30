@@ -4,7 +4,7 @@
   </a>
 
 <h1>openapi® client for Rust</h1>
-<h4>The perfect starting point to integrate <a href="https://openapi.com/">openapi®</a> within your Rust project</h4>
+<h4>The perfect starting point to integrate <a href="https://openapi.com/">Openapi®</a> within your Rust project</h4>
 </div>
 
 This client is used to interact with the API found at [openapi.it](https://openapi.it/)
@@ -23,10 +23,14 @@ cargo add openapiit-cli-rust
     
 ## Usage
 
-```rust
-use std::collections::HashMap;
+The client has two main operational modes:
 
-use openapi_client::{Client, OauthClient};
+### 1. Token Generation (OAuth Client)
+
+Use the `OauthClient` to generate access tokens for API access:
+
+```rust
+use openapi_client::OauthClient;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -36,9 +40,8 @@ struct TokenResponse {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // Initialize the oauthclient
-    let oauth_client =
-        OauthClient::new("<your_username>", "<your_apikey>", true).unwrap();
+    // Initialize the OAuth client
+    let oauth_client = OauthClient::new("<your_username>", "<your_apikey>", true)?;
 
     // Create a token for a list of scopes
     let scopes = vec![
@@ -50,18 +53,36 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // The string response can be parsed into a custom object
     let resp: TokenResponse = serde_json::from_str(&result)?;
-    let token = resp.token;
+    println!("Generated token: {}", resp.token);
 
-    // Initialize the client
-    let client = Client::new(token.clone()).unwrap();
+    // Delete the token when done
+    let _result = oauth_client.delete_token(resp.token).await?;
 
-    // Make a request with Params
+    Ok(())
+}
+```
+
+### 2. API Calls (Using Access Tokens)
+
+Use the `Client` to make API calls with your access tokens:
+
+```rust
+use openapi_client::Client;
+use serde::Serialize;
+use std::collections::HashMap;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize the client with your access token
+    let client = Client::new("<your_access_token>".to_string())?;
+
+    // Make a request with parameters
     let mut params = HashMap::new();
     params.insert("denominazione", "altravia");
     params.insert("provincia", "RM");
     params.insert("codice_ateco", "6201");
 
-    let _result = client
+    let result = client
         .request::<serde_json::Value>(
             "GET",
             "https://test.imprese.openapi.it/advance",
@@ -70,7 +91,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .await?;
 
-    // Make a request with a payload, a nested json
+    println!("API Response: {}", result);
+
+    // Make a request with a JSON payload
     #[derive(Serialize)]
     struct Query {
         country_code: String,
@@ -85,9 +108,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let query = Query {
         country_code: "IT".to_string(),
     };
-    let payload = Payload { limit: 0, query };
+    let payload = Payload { limit: 10, query };
 
-    let _result = client
+    let result = client
         .request(
             "POST",
             "https://test.postontarget.com/fields/country",
@@ -96,11 +119,30 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .await?;
 
-    // Delete the token
-    let _result = oauth_client.delete_token(token).await?;
+    println!("POST Response: {}", result);
 
     Ok(())
 }
+```
+
+## Examples
+
+You can find complete examples in the `examples/` directory:
+
+- `examples/token_generation.rs` - Token generation example
+- `examples/api_calls.rs` - API calls example
+
+Run examples with:
+```bash
+cargo run --example token_generation
+cargo run --example api_calls
+```
+
+## Testing
+
+Run tests with:
+```bash
+cargo test
 ```
 
 ## Contributing
