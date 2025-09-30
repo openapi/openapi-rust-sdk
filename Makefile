@@ -1,11 +1,11 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #                                                                             #
-#     ___                               _                                     #
-#    / _ \ _ __   ___ _ __   __ _ _ __ (_)®                                   #
-#   | | | | '_ \ / _ \ '_ \ / _` | '_ \| |                                    #
-#   | |_| | |_) |  __/ | | | (_| | |_) | |                                    #
-#    \___/| .__/ \___|_| |_|\__,_| .__/|_|                                    #
-#         |_|                     |_|                                         #
+#      ____                               _                                   #
+#     / __ \____  ___  ____  ____ _____  (_) ®                                # 
+#    / / / / __ \/ _ \/ __ \/ __ `/ __ \/ /                                   #
+#   / /_/ / /_/ /  __/ / / / /_/ / /_/ / /                                    #
+#   \____/ .___/\___/_/ /_/\__,_/ .___/_/                                     # 
+#       /_/                    /_/                                            #
 #                                                                             #
 #   The Largest Certified API Marketplace                                     #
 #   Accelerate Digital Transformation • Simplify Processes • Lead Industry    #
@@ -14,11 +14,11 @@
 #                                                                             #
 #   Project:        openapi-rust-sdk                                          #
 #   Version:        0.1.0                                                     #
-#   Author:         [Author Name]                                             #
-#   Copyright:      © 2025 Openapi®. All rights reserved.                     #
+#   Author:         Michael Cuffaro (@maiku1008)                              #
+#   Copyright:      (c) 2025 Openapi®. All rights reserved.                   #
 #   License:        MIT                                                       #
 #   Maintainer:     Francesco Bianco                                          #
-#   Contact:        [Contact Information]                                     #
+#   Contact:        https://openapi.com/                                      #
 #   Repository:     [Repository URL]                                          #
 #   Documentation:  [Docs URL]                                                #
 #                                                                             #
