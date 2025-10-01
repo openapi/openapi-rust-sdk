@@ -1,11 +1,5 @@
-<div align="center">
-  <a href="https://openapi.com/">
-    <img alt="Algolia for PHP" src=".github/assets/repo-header-a3.png" >
-  </a>
-
 <h1>openapi® client for Rust</h1>
 <h4>The perfect starting point to integrate <a href="https://openapi.com/">Openapi®</a> within your Rust project</h4>
-</div>
 
 This client is used to interact with the API found at [openapi.it](https://openapi.it/)
 
