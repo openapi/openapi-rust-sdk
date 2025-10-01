@@ -1,6 +1,6 @@
 [package]
 name = "openapi-sdk"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Michael Cuffaro (@maiku1008)", "Openapi® <hello@openapi.com>"]
 edition = "2021"
 description = "A fully-featured and blazing-fast Rust API client to interact with Openapi®"
