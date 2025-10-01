@@ -1,4 +1,4 @@
-use openapi_client::Client;
+use openapi_sdk::Client;
 use serde::Serialize;
 use std::collections::HashMap;
 

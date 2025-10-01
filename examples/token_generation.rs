@@ -1,4 +1,4 @@
-use openapi_client::OauthClient;
+use openapi_sdk::OauthClient;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
