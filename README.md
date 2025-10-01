@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://openapi.com/">
-    <img alt="Algolia for PHP" src=".github/assets/repo-header-a3.png" >
+    <img alt="Algolia for PHP" src=".github/assets/repo-header-a3.png1" >
   </a>
 
 <h1>openapi® client for Rust</h1>
