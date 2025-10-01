@@ -8,7 +8,7 @@ license = "MIT"
 categories = ["api-bindings", "web-programming", "asynchronous", "authentication", "development-tools"]
 documentation = "https://console.openapi.com/"
 homepage = "https://openapi.com/"
-keywords = ["openapi", "", "no_std"]
+keywords = ["openapi", "sdk", "client"]
 readme = "docs/crates-io.md"
 repository = "https://github.com/openapi/openapi-rust-sdk"
 
