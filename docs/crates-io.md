@@ -3,10 +3,11 @@
 
 ---
 
+## Overview
+
 This client provides an idiomatic Rust interface to the APIs available at [Openapi](https://openapi.com).  
 It simplifies integration with the Openapi Marketplace, offering typed requests, async support, and built-in error handling.  
 With this SDK you can quickly connect to hundreds of certified APIs and accelerate your digital transformation projects.
-
 
 ## Pre-requisites
 

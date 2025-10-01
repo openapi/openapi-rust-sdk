@@ -5,9 +5,11 @@
 
   <h1>Openapi® client for Rust</h1>
   <h4>The perfect starting point to integrate <a href="https://openapi.com/">Openapi®</a> within your Rust project</h4>
+
+  ⚡ 👾 ⚡
 </div>
 
----
+## Overview
 
 This client provides an idiomatic Rust interface to the APIs available at [Openapi](https://openapi.com).  
 It simplifies integration with the Openapi Marketplace, offering typed requests, async support, and built-in error handling.  
