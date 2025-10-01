@@ -161,8 +161,10 @@ Contributions are always welcome! See [docs/contributing.md](docs/contributing.m
 
 ## Authors
 
-- [@maiku1008](https://www.github.com/maiku1008)
-- [@openapi-it](https://github.com/openapi-it)
+Meet the project authors:
+
+- Michael Cuffaro - [@maiku1008](https://www.github.com/maiku1008)
+- Openapi Team - [@openapi-it](https://github.com/openapi-it)
 
 ## License
 
