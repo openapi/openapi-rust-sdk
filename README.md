@@ -168,6 +168,21 @@ Meet the project authors:
 - Michael Cuffaro ([@maiku1008](https://www.github.com/maiku1008))
 - Openapi Team ([@openapi-it](https://github.com/openapi-it))
 
+## Partners
+
+Meet our partners using Openapi or contributing to this SDK:
+
+- [Blank](https://www.blank.app/)
+- [Credit Safe](https://www.creditsafe.com/)
+- [Deliveroo](https://deliveroo.it/)
+- [Gruppo MOL](https://molgroupitaly.it/it/)
+- [Jakala](https://www.jakala.com/)
+- [Octotelematics](https://www.octotelematics.com/)
+- [OTOQI](https://otoqi.com/)
+- [PWC](https://www.pwc.com/)
+- [QOMODO S.R.L.](https://www.qomodo.me/)
+- [SOUNDREEF S.P.A.](https://www.soundreef.com/)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
