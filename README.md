@@ -6,13 +6,17 @@
   <h1>Openapi® client for Rust</h1>
   <h4>The perfect starting point to integrate <a href="https://openapi.com/">Openapi®</a> within your Rust project</h4>
 
-  ⚡ 👾 ⚡
+  [![Build Status](https://img.shields.io/github/actions/workflow/status/<username>/<repo>/rust.yml?branch=main)](https://github.com/<username>/<repo>/actions)
+  [![Crates.io](https://img.shields.io/crates/v/<crate_name>.svg)](https://crates.io/crates/<crate_name>)
+  [![Docs.rs](https://img.shields.io/docsrs/<crate_name>)](https://docs.rs/<crate_name>)
+  [![License](https://img.shields.io/github/license/<username>/<repo>)](LICENSE)
+  [![Rust Version](https://img.shields.io/badge/rust-1.80+-orange.svg)](https://www.rust-lang.org/)
 </div>
 
 ## Overview
 
-This client provides an idiomatic Rust interface to the APIs available at [Openapi](https://openapi.com).  
-It simplifies integration with the Openapi Marketplace, offering typed requests, async support, and built-in error handling.  
+This client provides an idiomatic Rust interface to the APIs available at [Openapi](https://openapi.com).
+It simplifies integration with the Openapi Marketplace, offering typed requests, async support, and built-in error handling.
 With this SDK you can quickly connect to hundreds of certified APIs and accelerate your digital transformation projects.
 
 ## Pre-requisites
