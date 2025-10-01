@@ -2,6 +2,8 @@
 name = "openapi-sdk"
 version = "0.1.0"
 edition = "2021"
+description = "A fully-featured and blazing-fast Rust API client to interact with Openapi®"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
