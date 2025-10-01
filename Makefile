@@ -1,3 +1,5 @@
+#!make
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 #                                                                             #
 #      ____                               _                                   #
@@ -29,7 +31,26 @@
 #                                                                             #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+
+## ====================
+## Development Commands
+## ====================
+
 dev-push:
 	@git add .
 	@git commit -m "$$(read -p 'Commit message: ' msg; echo $$msg)" || true
 	@git push
+
+dev-version:
+	@grep '^version' Cargo.toml | head -n1 | cut -d '"' -f2
+
+## ==================
+## Packaging Commands
+## ==================
+
+publish:
+	@git add .
+	@git commit -m "Update release $$(make -s dev-version)" || true
+	@git push
+	@cargo login
+	@cargo publish
