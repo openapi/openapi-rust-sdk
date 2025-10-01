@@ -157,14 +157,16 @@ cargo test
 
 ## Contributing
 
-Contributions are always welcome! See [docs/contributing.md](docs/contributing.md) for ways to get started. Please adhere to this project's [docs/code-of-conduct.md](docs/code-of-conduct.md).
+Contributions are always welcome! Whether you want to report bugs, suggest new features, improve documentation, or contribute code, your help is appreciated.
+
+See [docs/contributing.md](docs/contributing.md) for detailed instructions on how to get started. Please make sure to follow this project's [docs/code-of-conduct.md](docs/code-of-conduct.md) to help maintain a welcoming and collaborative environment.
 
 ## Authors
 
 Meet the project authors:
 
-- Michael Cuffaro - [@maiku1008](https://www.github.com/maiku1008)
-- Openapi Team - [@openapi-it](https://github.com/openapi-it)
+- Michael Cuffaro ([@maiku1008](https://www.github.com/maiku1008))
+- Openapi Team ([@openapi-it](https://github.com/openapi-it))
 
 ## License
 
