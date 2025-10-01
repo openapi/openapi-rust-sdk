@@ -21,7 +21,7 @@ With this SDK you can quickly connect to hundreds of certified APIs and accelera
 
 ## Pre-requisites
 
-Before using the OpenApi IT Rust Client, you will need an account at [openapi.it](https://openapi.it/) and an API key to the sandbox and/or production environment
+Before using the OpenApi IT Rust Client, you will need an account at [Openapi](https://console.openapi.com/) and an API key to the sandbox and/or production environment
 
 ## Installation
 
