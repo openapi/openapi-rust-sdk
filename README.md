@@ -52,7 +52,7 @@ The client has two main operational modes:
 Use the `OauthClient` to generate access tokens for API access:
 
 ```rust
-use openapi_client::OauthClient;
+use openapi_sdk::OauthClient;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -89,7 +89,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 Use the `Client` to make API calls with your access tokens:
 
 ```rust
-use openapi_client::Client;
+use openapi_sdk::Client;
 use serde::Serialize;
 use std::collections::HashMap;
 
