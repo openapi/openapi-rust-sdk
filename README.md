@@ -23,6 +23,18 @@ With this SDK you can quickly connect to hundreds of certified APIs and accelera
 
 Before using the Openapi Rust Client, you will need an account at [Openapi](https://console.openapi.com/) and an API key to the sandbox and/or production environment
 
+## What you can do
+
+With the Openapi Rust Client, you can easily interact with a variety of services in the Openapi Marketplace. For example, you can:
+
+- 📩 **Send SMS messages** with delivery reports and custom sender IDs
+- 💸 **Process bills and payments** in real time via API
+- 🧾 **Send electronic invoices** securely to the Italian Revenue Agency
+- 📄 **Generate PDFs** from HTML content, including JavaScript rendering
+- ✉️ **Manage certified emails** and legal communications via Italian Legalmail
+
+For a complete list of all available services, check out the [Openapi Marketplace](https://console.openapi.com/) 🌐
+
 ## Installation
 
 You can add the Openapi Rust Client to your project with the following command:
