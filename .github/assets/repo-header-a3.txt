@@ -1,0 +1,15 @@
+Image Description Sheet
+-----------------------
+
+File Name: repo-header-a3.png
+Format: PNG
+Dimensions: 830 x 173 pixels
+
+Short Description:
+A banner image featuring the word "Rust" on the left, Rust code snippet in the background,
+and the Openapi logo on the right.
+
+Purpose:
+This image is intended to be used as a header/banner for documentation or repository README.
+It visually associates Rust programming language with the Openapi SDK/client,
+giving a professional and modern look to the project materials.

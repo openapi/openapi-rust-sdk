@@ -131,3 +131,20 @@ impl Client {
         Ok(json_str)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_oauth_client_creation() {
+        let client = OauthClient::new("test_user", "test_key", true);
+        assert!(client.is_ok());
+    }
+
+    #[test]
+    fn test_api_client_creation() {
+        let client = Client::new("test_token".to_string());
+        assert!(client.is_ok());
+    }
+}
