@@ -6,7 +6,7 @@
   <h1>Openapi® client for Rust</h1>
   <h4>The perfect starting point to integrate <a href="https://openapi.com/">Openapi®</a> within your Rust project</h4>
 
-  [![Build Status](https://img.shields.io/github/actions/workflow/status/openapi/openapi-rust-sdk/rust.yml?branch=main)](https://github.com/openapi/openapi-rust-sdk/actions)
+  [![Build Status](https://github.com/openapi/openapi-rust-sdk/actions/workflows/rust.yml/badge.svg)](https://github.com/openapi/openapi-rust-sdk/actions/workflows/rust.yml)  
   [![Crates.io](https://img.shields.io/crates/v/openapi-sdk.svg)](https://crates.io/crates/openapi-sdk)
   [![Docs.rs](https://img.shields.io/docsrs/openapi-sdk)](https://docs.rs/openapi-sdk)
   [![License](https://img.shields.io/github/license/openapi/openapi-rust-sdk)](LICENSE)
