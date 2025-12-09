@@ -11,11 +11,11 @@ With this SDK you can quickly connect to hundreds of certified APIs and accelera
 
 ## Pre-requisites
 
-Before using the OpenApi IT Rust Client, you will need an account at [openapi.it](https://openapi.it/) and an API key to the sandbox and/or production environment
+Before using the Openapi IT Rust Client, you will need an account at [openapi.it](https://openapi.it/) and an API key to the sandbox and/or production environment
 
 ## Installation
 
-You can add the OpenApi IT Rust Client to your project with the following command:
+You can add the Openapi IT Rust Client to your project with the following command:
 
 ```bash
 cargo add openapi-sdk
