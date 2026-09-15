@@ -1,3 +1,18 @@
+<p align="center">
+  <a href="https://github.com/orgs/openapi/discussions">
+    <picture>
+      <source media="(prefers-color-scheme: dark)"
+              srcset="https://raw.githubusercontent.com/openapi/pulse/main/public/ticker-dark.svg">
+      <source media="(prefers-color-scheme: light)"
+              srcset="https://raw.githubusercontent.com/openapi/pulse/main/public/ticker.svg">
+      <img alt="OpenAPI Pulse — this week in the OpenAPI community"
+           src="https://raw.githubusercontent.com/openapi/pulse/main/public/ticker.svg">
+    </picture>
+  </a>
+</p>
+
+---
+
 <div align="center">
   <a href="https://openapi.com/">
     <img alt="Openapi SDK for Rust" src=".github/assets/repo-header-a3.png" >
