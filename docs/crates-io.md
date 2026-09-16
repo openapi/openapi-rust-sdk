@@ -138,6 +138,53 @@ cargo run --example token_generation
 cargo run --example api_calls
 ```
 
+## Error Handling
+
+SDK methods return `openapi_sdk::Result<T>`, whose error type is `openapi_sdk::Error`.
+If your application already has its own error enum, add a `From<openapi_sdk::Error>`
+implementation and the `?` operator will work in your existing `Result` pipeline:
+
+```rust
+use openapi_sdk::{Client, Error as OpenapiError};
+use std::error::Error;
+use std::fmt;
+
+#[derive(Debug)]
+enum MyError {
+    Openapi(OpenapiError),
+}
+
+impl fmt::Display for MyError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::Openapi(error) => write!(f, "{error}"),
+        }
+    }
+}
+
+impl Error for MyError {}
+
+impl From<OpenapiError> for MyError {
+    fn from(error: OpenapiError) -> Self {
+        Self::Openapi(error)
+    }
+}
+
+async fn fetch_users() -> Result<String, MyError> {
+    let client = Client::new("<your_access_token>".to_string())?;
+    let users = client
+        .request::<serde_json::Value>(
+            "GET",
+            "https://test.imprese.openapi.it/advance",
+            None,
+            None,
+        )
+        .await?;
+
+    Ok(users)
+}
+```
+
 ## Testing
 
 Run tests with:
