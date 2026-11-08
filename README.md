@@ -25,7 +25,7 @@
   [![Crates.io](https://img.shields.io/crates/v/openapi-sdk.svg)](https://crates.io/crates/openapi-sdk)
   [![Docs.rs](https://img.shields.io/docsrs/openapi-sdk)](https://docs.rs/openapi-sdk)
   [![License](https://img.shields.io/github/license/openapi/openapi-rust-sdk)](LICENSE)
-  [![Rust Version](https://img.shields.io/badge/rust-1.80+-orange.svg)](https://www.rust-lang.org/)
+  [![Rust Version](https://img.shields.io/badge/rust-1.85+-orange.svg)](https://www.rust-lang.org/)
   <br>
 [![Linux Foundation Member](https://img.shields.io/badge/Linux%20Foundation-Silver%20Member-003778?logo=linux-foundation&logoColor=white)](https://www.linuxfoundation.org/about/members)
 </div>

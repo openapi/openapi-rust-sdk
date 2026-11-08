@@ -2,7 +2,8 @@
 name = "openapi-sdk"
 version = "0.1.1"
 authors = ["Michael Cuffaro (@maiku1008)", "Openapi® <hello@openapi.com>"]
-edition = "2021"
+edition = "2024"
+rust-version = "1.85"
 description = "A fully-featured and blazing-fast Rust API client to interact with Openapi®"
 license = "MIT"
 categories = ["api-bindings", "web-programming", "asynchronous", "authentication", "development-tools"]
@@ -21,3 +22,6 @@ base64 = "0.13.0"
 http = "0.2.9"
 tokio = {version="1.28.1", features = ["rt", "macros"]}
 serde_json = "1.0"
+
+[dev-dependencies]
+tokio = { version = "1.28.1", features = ["rt-multi-thread", "macros"] }
