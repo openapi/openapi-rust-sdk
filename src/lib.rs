@@ -1,4 +1,5 @@
-use base64;
+//! Rust client for the Openapi® marketplace APIs.
+
 use http::header::{AUTHORIZATION, CONTENT_TYPE};
 use http::HeaderMap;
 use reqwest::Client as reqwest_client;
@@ -13,7 +14,7 @@ const OAUTH_BASE_URL: &str = "https://oauth.openapi.it";
 // Base URL for test OAuth endpoint
 const TEST_OAUTH_BASE_URL: &str = "https://test.oauth.openapi.it";
 
-/// OAuth client for OpenAPI authentication and token management
+/// OAuth client for Openapi® authentication and token management
 pub struct OauthClient {
     client: reqwest_client,
     url: &'static str,
@@ -26,7 +27,15 @@ impl OauthClient {
     /// * `username` - The API username
     /// * `apikey` - The API key for authentication
     /// * `test` - If true, uses test environment; otherwise production
-    pub fn new(username: &str, apikey: &str, test: bool) -> Result<OauthClient, reqwest::Error> {
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the underlying HTTP client cannot be built.
+    #[expect(
+        clippy::missing_panics_doc,
+        reason = "base64 credentials always form a valid header value"
+    )]
+    pub fn new(username: &str, apikey: &str, test: bool) -> Result<Self, reqwest::Error> {
         // Select appropriate base URL based on environment
         let url = if test {
             TEST_OAUTH_BASE_URL
@@ -47,15 +56,19 @@ impl OauthClient {
         let client = reqwest::Client::builder()
             .default_headers(headers)
             .build()?;
-        Ok(OauthClient { client, url })
+        Ok(Self { client, url })
     }
 
     /// Retrieves available OAuth scopes
     ///
     /// # Arguments
     /// * `limit` - If true, returns limited scope information
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
     pub async fn get_scopes(&self, limit: bool) -> Result<String, reqwest::Error> {
-        let params = [("limit", limit as u8)];
+        let params = [("limit", u8::from(limit))];
         let url = format!("{}/scopes", self.url);
         let response: Response = self.client.get(url).query(&params).send().await?;
         // TODO: Add error handling for non-2xx status codes with descriptive messages
@@ -68,6 +81,10 @@ impl OauthClient {
     /// # Arguments
     /// * `scopes` - List of permission scopes for the token
     /// * `ttl` - Token lifetime in seconds
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
     pub async fn create_token(
         &self,
         scopes: Vec<&'static str>,
@@ -92,6 +109,10 @@ impl OauthClient {
     ///
     /// # Arguments
     /// * `scope` - The scope to filter tokens by
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
     pub async fn get_tokens(&self, scope: &'static str) -> Result<String, reqwest::Error> {
         let params = [("scope", scope)];
         let url = format!("{}/token", self.url);
@@ -105,6 +126,10 @@ impl OauthClient {
     ///
     /// # Arguments
     /// * `id` - The unique identifier of the token to delete
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
     pub async fn delete_token(&self, id: String) -> Result<String, reqwest::Error> {
         let url = format!("{}/token/{}", self.url, id);
         let response: Response = self.client.delete(url).send().await?;
@@ -118,6 +143,10 @@ impl OauthClient {
     /// # Arguments
     /// * `period` - The time period (e.g., "day", "month")
     /// * `date` - The date in appropriate format
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
     pub async fn get_counters(
         &self,
         period: &'static str,
@@ -141,7 +170,15 @@ impl Client {
     ///
     /// # Arguments
     /// * `token` - The Bearer token for API authentication
-    pub fn new(token: String) -> Result<Client, reqwest::Error> {
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the underlying HTTP client cannot be built.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `token` contains characters that are not valid in an HTTP header value.
+    pub fn new(token: &str) -> Result<Self, reqwest::Error> {
         let auth_header = format!("Bearer {token}");
         let mut headers = HeaderMap::new();
 
@@ -153,7 +190,7 @@ impl Client {
         let client = reqwest::Client::builder()
             .default_headers(headers)
             .build()?;
-        Ok(Client { client })
+        Ok(Self { client })
     }
 
     /// Makes an HTTP request to the specified URL
@@ -166,6 +203,14 @@ impl Client {
     ///
     /// # Returns
     /// The response body as a JSON string
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the request fails or the response body cannot be read.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `method` is not a valid HTTP method.
     pub async fn request<T>(
         &self,
         method: &str,
@@ -176,8 +221,6 @@ impl Client {
     where
         T: Serialize,
     {
-        let url = format!("{}", url);
-
         // TODO: Replace unwrap() with proper error handling for invalid HTTP methods
         // Consider returning a descriptive error like "Invalid HTTP method: {method}"
         let mut request = self.client.request(Method::from_str(method).unwrap(), url);
@@ -215,7 +258,7 @@ mod tests {
     /// Tests successful creation of API client with Bearer token
     #[test]
     fn test_api_client_creation() {
-        let client = Client::new("test_token".to_string());
+        let client = Client::new("test_token");
         assert!(client.is_ok());
     }
 

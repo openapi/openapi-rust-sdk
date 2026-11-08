@@ -1,11 +1,23 @@
+//! Calls Openapi® APIs with a Bearer access token.
+
 use openapi_sdk::Client;
 use serde::Serialize;
 use std::collections::HashMap;
 
+#[derive(Serialize)]
+struct Query {
+    country_code: String,
+}
+
+#[derive(Serialize)]
+struct Payload {
+    limit: u64,
+    query: Query,
+}
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let token = "<your_access_token>".to_string();
-    let client = Client::new(token)?;
+    let client = Client::new("<your_access_token>")?;
 
     let mut params = HashMap::new();
     params.insert("denominazione", "altravia");
@@ -21,18 +33,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .await?;
 
-    println!("API Response: {}", result);
-
-    #[derive(Serialize)]
-    struct Query {
-        country_code: String,
-    }
-
-    #[derive(Serialize)]
-    struct Payload {
-        limit: u64,
-        query: Query,
-    }
+    println!("API Response: {result}");
 
     let query = Query {
         country_code: "IT".to_string(),
@@ -48,7 +49,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         )
         .await?;
 
-    println!("POST API Response: {}", result);
+    println!("POST API Response: {result}");
 
     Ok(())
 }
