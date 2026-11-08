@@ -74,7 +74,7 @@ use std::collections::HashMap;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Initialize the client with your access token
-    let client = Client::new("<your_access_token>".to_string())?;
+    let client = Client::new("<your_access_token>")?;
 
     // Make a request with parameters
     let mut params = HashMap::new();

@@ -20,3 +20,32 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+
+  fmt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install rustfmt
+      run: rustup toolchain install stable --profile minimal --component rustfmt && rustup default stable
+    - name: Check formatting
+      run: cargo fmt --all --check
+
+  clippy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install clippy
+      run: rustup toolchain install stable --profile minimal --component clippy && rustup default stable
+    - name: Run clippy
+      run: cargo clippy --all-targets -- -D warnings
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install toolchain
+      run: rustup toolchain install stable --profile minimal && rustup default stable
+    - name: Build documentation
+      run: cargo doc --no-deps
+      env:
+        RUSTDOCFLAGS: -D warnings

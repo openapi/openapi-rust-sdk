@@ -1,3 +1,5 @@
+//! Creates an Openapi® OAuth access token for a list of scopes.
+
 use openapi_sdk::OauthClient;
 use serde::{Deserialize, Serialize};
 
